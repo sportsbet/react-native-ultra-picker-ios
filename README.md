@@ -14,16 +14,16 @@ Picker from React-Native (at the time of writing) only supports a single column.
 ``` 
 npm install "react-native-ultra-picker-ios"
 ```
-Open your existing app's .xcodeproj file
-Drag the /.node_modules/react-native-ultra-picker-ios/UltraPickerIOS/UltraPickerIOS.xcodeproj file into the Libraries group in your xcode project (Figure A)
-Choose your app's Target and select the Build Phases tab.
+- Open your existing app's .xcodeproj file
+- Drag the /.node_modules/react-native-ultra-picker-ios/UltraPickerIOS/UltraPickerIOS.xcodeproj file into the Libraries group in your xcode project (Figure A)
+- Choose your app's Target and select the Build Phases tab.
 Under Link Binary With Libraries click the + button and add `libUltraPickerIOS.a` (Figure B)
 
 ![XCode setup](http://i.imgur.com/ko69aL3.png)
 
 # Example
 
-```
+```js
 // index.ios.js
 import { UltraPickerIOS, 
   UltraPickerIOSCloseBar, 
@@ -31,7 +31,7 @@ import { UltraPickerIOS,
   Item
  } from "react-native-ultra-picker-ios"
  
-export default class reactNativeUltraPickerIosExample extends React.Component {
+export class reactNativeUltraPickerIosExample extends React.Component {
    
    pickerClosed() {
     console.log("Closed");
