@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "target": "es6",
+        "target": "es5",
         "experimentalDecorators": true,
         "preserveConstEnums": true,
         "skipDefaultLibCheck": true,
@@ -10,6 +10,6 @@
         "rootDir": "typescript",
         "outDir": "javascript",
         "moduleResolution": "node",
-        "declaration": false
+        "declaration": true
     }
 }

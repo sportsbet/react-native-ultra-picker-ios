@@ -1,3 +1,10 @@
+//
+//  UltraPickerIOS
+//
+//  Created by Tim Sawtell on 3/10/17.
+//  Copyright © 2017 Sportsbet. All rights reserved.
+//
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -13,7 +20,7 @@ const DEFAULT_PICKER_HEIGHT = 216
 export interface UltraPickerIOSNative {
     componentsData?: any,
     selectedIndexes?: Number[]
-    onChange?: (any) => void
+    onChange?: (result: any) => void
     style?: StyleSheet.Style
 }
 
@@ -28,7 +35,7 @@ export interface ComponentItem {
     selected?: boolean
 }
 
-interface ComponentGroup {
+export interface ComponentGroup {
     items?: ComponentItem[]
 }
 

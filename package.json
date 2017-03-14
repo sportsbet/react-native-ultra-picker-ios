@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "A multiple component Picker for react-native iOS. More than one column, imagine that!",
   "main": "javascript/UltraPickerIOS.js",
+  "typings": "javascript/UltraPickerIOS.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,10 +15,10 @@
   "author": "Tim Sawtell <tim.sawtell@sportsbet.com.au> (https://github.com/sportsbet)",
   "devDependencies": {
 		"react": "15.4.2",
-		"react-native": "^0.41.0",
+		"react-native": "^0.42.0",
 		"@types/react": "^15.0.13",
-    	"@types/react-native": "^0.37.13",
-    	"typescript": "^2.2.1"
+    "@types/react-native": "^0.42.0",
+    "typescript": "^2.2.1"
   },
   "license": "MIT"
 }
