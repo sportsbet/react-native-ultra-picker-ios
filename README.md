@@ -3,6 +3,7 @@
 A multiple column (component) UIPickerView component 
 
   - Supports Typescript!
+  - es5 compliant
 
 # Why?
 
