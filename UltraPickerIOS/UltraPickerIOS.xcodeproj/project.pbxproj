@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BB1CF0F1E70FB750023F72C /* UltraPickerIOSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D728D1E70B9D0001431B0 /* UltraPickerIOSManager.m */; };
+		2BB1CF101E70FB790023F72C /* UltraPickerIOSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B8D728F1E70B9D0001431B0 /* UltraPickerIOSView.m */; };
+		2BB1CF251E7200B60023F72C /* UltraPickerIOSCloseBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1CF241E7200B60023F72C /* UltraPickerIOSCloseBarManager.m */; };
+		2BB1CF281E7201080023F72C /* UltraPickerCloseBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1CF271E7201080023F72C /* UltraPickerCloseBar.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BB1CF041E70FB710023F72C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2B8D727F1E70B980001431B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B8D728D1E70B9D0001431B0 /* UltraPickerIOSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltraPickerIOSManager.m; sourceTree = "<group>"; };
+		2B8D728E1E70B9D0001431B0 /* UltraPickerIOSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltraPickerIOSView.h; sourceTree = "<group>"; };
+		2B8D728F1E70B9D0001431B0 /* UltraPickerIOSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltraPickerIOSView.m; sourceTree = "<group>"; };
+		2B8D72DA1E70BD21001431B0 /* libRCTActionSheet.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTActionSheet.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTActionSheet.a"; sourceTree = "<group>"; };
+		2B8D72DB1E70BD21001431B0 /* libRCTAnimation.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTAnimation.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTAnimation.a"; sourceTree = "<group>"; };
+		2B8D72DC1E70BD21001431B0 /* libRCTImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTImage.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTImage.a"; sourceTree = "<group>"; };
+		2B8D72DD1E70BD21001431B0 /* libRCTLinking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTLinking.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTLinking.a"; sourceTree = "<group>"; };
+		2B8D72DE1E70BD21001431B0 /* libRCTNetwork.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTNetwork.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTNetwork.a"; sourceTree = "<group>"; };
+		2B8D72DF1E70BD21001431B0 /* libRCTSettings.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTSettings.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTSettings.a"; sourceTree = "<group>"; };
+		2B8D72E01E70BD21001431B0 /* libRCTText.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTText.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTText.a"; sourceTree = "<group>"; };
+		2B8D72E11E70BD21001431B0 /* libRCTVibration.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTVibration.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTVibration.a"; sourceTree = "<group>"; };
+		2B8D72E21E70BD21001431B0 /* libRCTWebSocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRCTWebSocket.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libRCTWebSocket.a"; sourceTree = "<group>"; };
+		2B8D72E31E70BD21001431B0 /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "../../../Library/Developer/Xcode/DerivedData/reactNativeUltraPickerIosExample-cdtddbuqpjvqdcgsypjbkkozwopn/Build/Products/Debug-iphonesimulator/libReact.a"; sourceTree = "<group>"; };
+		2B8D72EE1E70BD54001431B0 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		2BB1CF061E70FB710023F72C /* libUltraPickerIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUltraPickerIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BB1CF241E7200B60023F72C /* UltraPickerIOSCloseBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltraPickerIOSCloseBarManager.m; sourceTree = "<group>"; };
+		2BB1CF261E7201080023F72C /* UltraPickerCloseBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UltraPickerCloseBar.h; sourceTree = "<group>"; };
+		2BB1CF271E7201080023F72C /* UltraPickerCloseBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UltraPickerCloseBar.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BB1CF031E70FB710023F72C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B8D72711E70B980001431B0 = {
+			isa = PBXGroup;
+			children = (
+				2B8D727D1E70B980001431B0 /* UltraPickerIOS */,
+				2B8D727C1E70B980001431B0 /* Products */,
+				2B8D72D91E70BD21001431B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2B8D727C1E70B980001431B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BB1CF061E70FB710023F72C /* libUltraPickerIOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B8D727D1E70B980001431B0 /* UltraPickerIOS */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D728D1E70B9D0001431B0 /* UltraPickerIOSManager.m */,
+				2B8D728E1E70B9D0001431B0 /* UltraPickerIOSView.h */,
+				2B8D728F1E70B9D0001431B0 /* UltraPickerIOSView.m */,
+				2B8D727F1E70B980001431B0 /* Info.plist */,
+				2BB1CF241E7200B60023F72C /* UltraPickerIOSCloseBarManager.m */,
+				2BB1CF261E7201080023F72C /* UltraPickerCloseBar.h */,
+				2BB1CF271E7201080023F72C /* UltraPickerCloseBar.m */,
+			);
+			path = UltraPickerIOS;
+			sourceTree = "<group>";
+		};
+		2B8D72D91E70BD21001431B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B8D72EE1E70BD54001431B0 /* libc++.tbd */,
+				2B8D72DA1E70BD21001431B0 /* libRCTActionSheet.a */,
+				2B8D72DB1E70BD21001431B0 /* libRCTAnimation.a */,
+				2B8D72DC1E70BD21001431B0 /* libRCTImage.a */,
+				2B8D72DD1E70BD21001431B0 /* libRCTLinking.a */,
+				2B8D72DE1E70BD21001431B0 /* libRCTNetwork.a */,
+				2B8D72DF1E70BD21001431B0 /* libRCTSettings.a */,
+				2B8D72E01E70BD21001431B0 /* libRCTText.a */,
+				2B8D72E11E70BD21001431B0 /* libRCTVibration.a */,
+				2B8D72E21E70BD21001431B0 /* libRCTWebSocket.a */,
+				2B8D72E31E70BD21001431B0 /* libReact.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BB1CF051E70FB710023F72C /* UltraPickerIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BB1CF0C1E70FB710023F72C /* Build configuration list for PBXNativeTarget "UltraPickerIOS" */;
+			buildPhases = (
+				2BB1CF021E70FB710023F72C /* Sources */,
+				2BB1CF031E70FB710023F72C /* Frameworks */,
+				2BB1CF041E70FB710023F72C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UltraPickerIOS;
+			productName = UltraPickerIOS;
+			productReference = 2BB1CF061E70FB710023F72C /* libUltraPickerIOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B8D72721E70B980001431B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Sportsbet;
+				TargetAttributes = {
+					2BB1CF051E70FB710023F72C = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2B8D72751E70B980001431B0 /* Build configuration list for PBXProject "UltraPickerIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2B8D72711E70B980001431B0;
+			productRefGroup = 2B8D727C1E70B980001431B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BB1CF051E70FB710023F72C /* UltraPickerIOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BB1CF021E70FB710023F72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BB1CF0F1E70FB750023F72C /* UltraPickerIOSManager.m in Sources */,
+				2BB1CF281E7201080023F72C /* UltraPickerCloseBar.m in Sources */,
+				2BB1CF101E70FB790023F72C /* UltraPickerIOSView.m in Sources */,
+				2BB1CF251E7200B60023F72C /* UltraPickerIOSCloseBarManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B8D72811E70B980001431B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B8D72821E70B980001431B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2BB1CF0D1E70FB710023F72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2BB1CF0E1E70FB710023F72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B8D72751E70B980001431B0 /* Build configuration list for PBXProject "UltraPickerIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B8D72811E70B980001431B0 /* Debug */,
+				2B8D72821E70B980001431B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BB1CF0C1E70FB710023F72C /* Build configuration list for PBXNativeTarget "UltraPickerIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BB1CF0D1E70FB710023F72C /* Debug */,
+				2BB1CF0E1E70FB710023F72C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B8D72721E70B980001431B0 /* Project object */;
+}
