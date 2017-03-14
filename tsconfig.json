@@ -7,8 +7,8 @@
         "skipDefaultLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": false,
-        "rootDir": "typescript",
-        "outDir": "javascript",
+        "rootDir": "ts",
+        "outDir": "js",
         "moduleResolution": "node",
         "declaration": true
     }

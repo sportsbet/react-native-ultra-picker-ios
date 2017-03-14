@@ -5,7 +5,7 @@
 //  Copyright © 2017 Sportsbet. All rights reserved.
 //
 
-import React, { Component } from 'react';
+import * as React from 'react';
 import {
   StyleSheet,
   View
@@ -39,7 +39,7 @@ export interface ComponentGroup {
     items?: ComponentItem[]
 }
 
-export class Group extends React.Component<any, any> {
+export class Group extends React.Component<ComponentGroup, any> {
     render() {
         return null
     }
