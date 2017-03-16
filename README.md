@@ -47,18 +47,18 @@ export class reactNativeUltraPickerIosExample extends React.Component {
         <UltraPickerIOS onChange={this.pickerChanged} style={styles.ultraPicker}>
           <UltraPickerIOSCloseBar style={styles.closeBar} onClose={this.pickerClosed} />
           <Group>
-            <Item name="Dune" />
-            <Item name="Dune Messiah" />
-            <Item name="Children of Dune" />
-            <Item name="God Emperor of Dune" />
-            <Item name="Heretics of Dune" selected={true} />
-            <Item name="Chapterhouse: Dune"/>
+            <Item label="Dune" value={{someKey: "some value"}}/>
+            <Item label="Dune Messiah" />
+            <Item label="Children of Dune" />
+            <Item label="God Emperor of Dune" />
+            <Item label="Heretics of Dune" selected={true} />
+            <Item label="Chapterhouse: Dune"/>
           </Group>
           <Group>
-            <Item name="Paperback" />
-            <Item name="Kobo" />
-            <Item name="Kindle" selected={true} />
-            <Item name="Nook" />
+            <Item label="Paperback" />
+            <Item label="Kobo" />
+            <Item label="Kindle" selected={true} />
+            <Item label="Nook" />
           </Group>
         </UltraPickerIOS>
       </View>
