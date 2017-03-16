@@ -11,7 +11,7 @@
 
 @interface UltraPickerIOSView : UIPickerView
 
-@property (nonatomic, copy) NSArray <NSArray*> *componentsData;
+@property (nonatomic, copy) NSArray <NSArray <NSDictionary<NSString *, id> *> *> *componentsData;
 @property (nonatomic, copy) NSArray <NSNumber*> *selectedIndexes;
 @property (nonatomic, copy) RCTBubblingEventBlock onChange;
 @end

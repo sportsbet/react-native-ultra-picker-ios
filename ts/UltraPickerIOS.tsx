@@ -17,35 +17,36 @@ const UltraPickerIOSCloseBarNative = requireNativeComponent("UltraPickerIOSClose
 const DEFAULT_CLOSEBAR_HEIGHT = 44
 const DEFAULT_PICKER_HEIGHT = 216
 
-export interface UltraPickerIOSNative {
+interface UltraPickerIOSNative {
     componentsData?: any,
     selectedIndexes?: Number[]
     onChange?: (result: any) => void
     style?: StyleSheet.Style
 }
 
-export interface UltraPickerIOSCloseBarNative {
+interface UltraPickerIOSCloseBarNative {
     closeButtonText?: string
     onClose?: (result: any) => void
     style?: StyleSheet.Style
 }
 
-export interface ComponentItem {
-    name: string,
+export interface ComponentGroup {
+    items?: ComponentItemProps[]
+}
+
+export interface ComponentItemProps {
+    label: string,
+    value?: any,
     selected?: boolean
 }
 
-export interface ComponentGroup {
-    items?: ComponentItem[]
-}
-
-export class Group extends React.Component<ComponentGroup, any> {
+export class Group extends React.Component<any, any> {
     render() {
         return null
     }
 }
 
-export class Item extends React.Component<ComponentItem, any> {
+export class Item extends React.Component<ComponentItemProps, any> {
     render() {
         return null
     }
@@ -101,8 +102,11 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
                         items = [child.props.children]
                     }
                     items.forEach((item, index) => {
-                        if (item.type.name === "Item" && item.props.name) {
-                            group.push(item.props.name)
+                        if (item.type.name === "Item" && item.props.label) {
+                            group.push({
+                                label: item.props.label,
+                                value: (item.props.value || null)
+                            })
                             if (item.props.selected) {
                                 groupSelectedItem = index
                             }

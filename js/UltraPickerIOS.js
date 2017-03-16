@@ -95,8 +95,11 @@ var UltraPickerIOS = (function (_super) {
                         items = [child.props.children];
                     }
                     items.forEach(function (item, index) {
-                        if (item.type.name === "Item" && item.props.name) {
-                            group_1.push(item.props.name);
+                        if (item.type.name === "Item" && item.props.label) {
+                            group_1.push({
+                                label: item.props.label,
+                                value: (item.props.value || null)
+                            });
                             if (item.props.selected) {
                                 groupSelectedItem_1 = index;
                             }

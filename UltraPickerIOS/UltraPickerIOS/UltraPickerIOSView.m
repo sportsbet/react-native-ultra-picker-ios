@@ -47,12 +47,17 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [self valueForRow:row forComponent:component];
+    return [self labelForRow:row forComponent:component];
+}
+
+- (NSString *)labelForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"label"];
 }
 
 - (NSString *)valueForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[self.componentsData objectAtIndex:component] objectAtIndex:row];
+    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"value"];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -60,7 +65,8 @@
     NSDictionary *event = @{
                             @"newIndex": @(row),
                             @"component": @(component),
-                            @"newValue": [self valueForRow:row forComponent:component]
+                            @"newValue": [self valueForRow:row forComponent:component],
+                            @"newLabel": [self labelForRow:row forComponent:component]
                             };
     
     if (self.onChange) {

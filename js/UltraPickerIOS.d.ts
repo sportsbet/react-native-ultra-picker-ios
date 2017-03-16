@@ -1,29 +1,19 @@
-/// <reference types="react-native" />
 /// <reference types="react" />
+/// <reference types="react-native" />
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
-export interface UltraPickerIOSNative {
-    componentsData?: any;
-    selectedIndexes?: Number[];
-    onChange?: (result: any) => void;
-    style?: StyleSheet.Style;
+export interface ComponentGroup {
+    items?: ComponentItemProps[];
 }
-export interface UltraPickerIOSCloseBarNative {
-    closeButtonText?: string;
-    onClose?: (result: any) => void;
-    style?: StyleSheet.Style;
-}
-export interface ComponentItem {
-    name: string;
+export interface ComponentItemProps {
+    label: string;
+    value?: any;
     selected?: boolean;
 }
-export interface ComponentGroup {
-    items?: ComponentItem[];
-}
-export declare class Group extends React.Component<ComponentGroup, any> {
+export declare class Group extends React.Component<any, any> {
     render(): any;
 }
-export declare class Item extends React.Component<ComponentItem, any> {
+export declare class Item extends React.Component<ComponentItemProps, any> {
     render(): any;
 }
 export interface UltraPickerIOSProps {
