@@ -89,6 +89,9 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
             pickerChildren = [nextProps.children]
         }
         pickerChildren.forEach((child, index) => {
+            if (!child) {
+                return
+            }
             if (child.type.name === "UltraPickerIOSCloseBar") {
                 nextState.closeBar = child
             } else if (child.type.name === "Group") {
