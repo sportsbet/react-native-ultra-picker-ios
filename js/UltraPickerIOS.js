@@ -80,6 +80,9 @@ var UltraPickerIOS = (function (_super) {
             pickerChildren = [nextProps.children];
         }
         pickerChildren.forEach(function (child, index) {
+            if (!child) {
+                return;
+            }
             if (child.type.name === "UltraPickerIOSCloseBar") {
                 nextState.closeBar = child;
             }

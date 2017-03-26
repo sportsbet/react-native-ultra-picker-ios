@@ -1,5 +1,4 @@
 /// <reference types="react" />
-/// <reference types="react-native" />
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 export interface ComponentGroup {
