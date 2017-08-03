@@ -2,14 +2,17 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 export interface ComponentGroup {
-    items?: ComponentItemProps[];
+    fontFamily?: string;
+    fontSize?: string;
 }
 export interface ComponentItemProps {
     label: string;
     value?: any;
     selected?: boolean;
+    fontFamily?: string;
+    fontSize?: string;
 }
-export declare class Group extends React.Component<any, any> {
+export declare class Group extends React.Component<ComponentGroup, any> {
     render(): any;
 }
 export declare class Item extends React.Component<ComponentItemProps, any> {

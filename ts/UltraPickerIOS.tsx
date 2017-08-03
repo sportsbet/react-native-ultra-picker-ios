@@ -31,16 +31,23 @@ interface UltraPickerIOSCloseBarNative {
 }
 
 export interface ComponentGroup {
-    items?: ComponentItemProps[]
+    fontFamily?: string,
+    fontSize?: string
 }
 
 export interface ComponentItemProps {
     label: string,
     value?: any,
-    selected?: boolean
+    selected?: boolean,
+    fontFamily?: string,
+    fontSize?: string
 }
 
-export class Group extends React.Component<any, any> {
+interface NativeGroup extends ComponentGroup {
+    items?: ComponentItemProps[],
+} 
+
+export class Group extends React.Component<ComponentGroup, any> {
     render() {
         return null
     }
@@ -95,7 +102,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
             if (child.type.name === "UltraPickerIOSCloseBar") {
                 nextState.closeBar = child
             } else if (child.type.name === "Group") {
-                let group = []
+                let group: ComponentItemProps[] = []
                 let groupSelectedItem = 0 // item at index 0 by default
                 let items = null
                 if (child.props.children) {
@@ -106,17 +113,25 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
                     }
                     items.forEach((item, index) => {
                         if (item.type.name === "Item" && item.props.label) {
-                            group.push({
+                            const nativeItem: ComponentItemProps = {
                                 label: item.props.label,
+                                fontFamily: item.props.fontFamily,
+                                fontSize: item.props.fontSize,
                                 value: (item.props.value || null)
-                            })
+                            }
+                            group.push(nativeItem)
                             if (item.props.selected) {
                                 groupSelectedItem = index
                             }
                         }
                     })
                     if (group.length > 0) {
-                        components.push(group)
+                        const nativeGroup: NativeGroup = {
+                            items: group,
+                            fontFamily: child.props.fontFamily,
+                            fontSize: child.props.fontSize
+                        }
+                        components.push(nativeGroup)
                         selectedIndexes.push(groupSelectedItem)
                     }
                 }
@@ -145,7 +160,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
             ...pickerViewStyle
         }
         if (this.state.closeBar) {
-            parentViewStyle.height = parentViewStyle.height + DEFAULT_CLOSEBAR_HEIGHT
+            parentViewStyle.height = parentViewStyle.height as number + DEFAULT_CLOSEBAR_HEIGHT
         }
         return (
             <View style={parentViewStyle}>

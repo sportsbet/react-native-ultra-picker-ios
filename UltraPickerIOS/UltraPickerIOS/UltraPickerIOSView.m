@@ -12,6 +12,8 @@
 
 @end
 
+NSInteger const UIPickerDefaultFontSize = 17.0;
+
 @implementation UltraPickerIOSView
 
 - (void) setComponentsData:(NSArray *)componentsData
@@ -39,10 +41,9 @@
     return self.componentsData.count;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [[self.componentsData objectAtIndex:component] count];
+    return [[[self.componentsData objectAtIndex:component] valueForKey:@"items"] count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -52,12 +53,59 @@
 
 - (NSString *)labelForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"label"];
+    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"label"];
+}
+
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel *displayLabel;
+    
+    if (view) {
+        displayLabel = (UILabel *)view;
+    }else {
+        displayLabel = [UILabel new];
+        displayLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    UIFont *font = nil;
+    
+    //Check for property on the Item first, then the Group
+    if ([[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"] != nil) {
+        NSString *fontName= [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"];
+        NSInteger fontSize = UIPickerDefaultFontSize;
+        if ([[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"] != nil) {
+            NSString *size = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"];
+            if ([size integerValue] > 0) {
+                fontSize = [size integerValue];
+            }
+        }
+        font = [UIFont fontWithName:fontName size:fontSize];
+    }else {
+        if ([[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"] != nil) {
+            NSString *fontName = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
+            NSInteger fontSize = UIPickerDefaultFontSize;
+            if ([[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"] != nil) {
+                NSString *size = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
+                if ([size integerValue] > 0) {
+                    fontSize = [size integerValue];
+                }
+            }
+            font = [UIFont fontWithName:fontName size:fontSize];
+        }
+    }
+
+    if (font) {
+        displayLabel.font = font;
+    }
+    
+    displayLabel.text = [self labelForRow:row forComponent:component];
+    
+    return displayLabel;
 }
 
 - (NSString *)valueForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"value"];
+    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"value"];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
