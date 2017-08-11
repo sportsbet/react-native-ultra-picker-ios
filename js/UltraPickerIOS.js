@@ -128,7 +128,7 @@ var UltraPickerIOS = (function (_super) {
         return nextState;
     };
     UltraPickerIOS.prototype.componentWillReceiveProps = function (nextProps) {
-        this.state = this._stateBasedOnProps(nextProps);
+        this.setState(this._stateBasedOnProps(nextProps));
     };
     UltraPickerIOS.prototype.render = function () {
         // Allow the caller to not specify any style yet make this component visible 

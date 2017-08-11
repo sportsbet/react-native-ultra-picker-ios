@@ -143,7 +143,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
     }
 
     componentWillReceiveProps(nextProps) {
-        this.state = this._stateBasedOnProps(nextProps)
+        this.setState(this._stateBasedOnProps(nextProps))
     }
 
     render() {
