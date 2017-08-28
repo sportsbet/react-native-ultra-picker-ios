@@ -13,6 +13,7 @@
 @end
 
 NSInteger const UIPickerDefaultFontSize = 17.0;
+NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
 
 @implementation UltraPickerIOSView
 
@@ -67,32 +68,25 @@ NSInteger const UIPickerDefaultFontSize = 17.0;
         displayLabel.textAlignment = NSTextAlignmentCenter;
     }
     
+    NSString *fontName;
+    NSInteger fontSize;
     UIFont *font = nil;
     
     //Check for property on the Item first, then the Group
-    if ([[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"] != nil) {
-        NSString *fontName= [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"];
-        NSInteger fontSize = UIPickerDefaultFontSize;
-        if ([[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"] != nil) {
-            NSString *size = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"];
-            if ([size integerValue] > 0) {
-                fontSize = [size integerValue];
-            }
-        }
-        font = [UIFont fontWithName:fontName size:fontSize];
+    NSString *itemFontFamily = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"];
+    NSString *itemFontSize = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"];
+    
+    if (itemFontFamily != nil || itemFontSize != nil) {
+        fontName = itemFontFamily ?: UIPickerDefaultFontFamily;
+        fontSize = itemFontSize.integerValue > 0 ? itemFontSize.integerValue : UIPickerDefaultFontSize;
     }else {
-        if ([[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"] != nil) {
-            NSString *fontName = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
-            NSInteger fontSize = UIPickerDefaultFontSize;
-            if ([[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"] != nil) {
-                NSString *size = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
-                if ([size integerValue] > 0) {
-                    fontSize = [size integerValue];
-                }
-            }
-            font = [UIFont fontWithName:fontName size:fontSize];
-        }
+        NSString *groupFontFamily = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
+        NSString *groupFontSize = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
+        fontName = groupFontFamily ?: UIPickerDefaultFontFamily;
+        fontSize = groupFontSize.integerValue > 0 ? groupFontSize.integerValue : UIPickerDefaultFontSize;
     }
+    
+    font = [UIFont fontWithName:fontName size:fontSize];
 
     if (font) {
         displayLabel.font = font;
