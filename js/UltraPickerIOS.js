@@ -1,10 +1,10 @@
+"use strict";
 //
 //  UltraPickerIOS
 //
 //  Created by Tim Sawtell on 3/10/17.
 //  Copyright © 2017 Sportsbet. All rights reserved.
 //
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -99,17 +99,25 @@ var UltraPickerIOS = (function (_super) {
                     }
                     items.forEach(function (item, index) {
                         if (item.type.name === "Item" && item.props.label) {
-                            group_1.push({
+                            var nativeItem = {
                                 label: item.props.label,
+                                fontFamily: item.props.fontFamily,
+                                fontSize: item.props.fontSize,
                                 value: (item.props.value || null)
-                            });
+                            };
+                            group_1.push(nativeItem);
                             if (item.props.selected) {
                                 groupSelectedItem_1 = index;
                             }
                         }
                     });
                     if (group_1.length > 0) {
-                        components.push(group_1);
+                        var nativeGroup = {
+                            items: group_1,
+                            fontFamily: child.props.fontFamily,
+                            fontSize: child.props.fontSize
+                        };
+                        components.push(nativeGroup);
                         selectedIndexes.push(groupSelectedItem_1);
                     }
                 }
@@ -120,7 +128,7 @@ var UltraPickerIOS = (function (_super) {
         return nextState;
     };
     UltraPickerIOS.prototype.componentWillReceiveProps = function (nextProps) {
-        this.state = this._stateBasedOnProps(nextProps);
+        this.setState(this._stateBasedOnProps(nextProps));
     };
     UltraPickerIOS.prototype.render = function () {
         // Allow the caller to not specify any style yet make this component visible 

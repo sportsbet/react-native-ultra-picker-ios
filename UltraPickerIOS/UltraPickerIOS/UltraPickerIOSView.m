@@ -12,6 +12,9 @@
 
 @end
 
+NSInteger const UIPickerDefaultFontSize = 17.0;
+NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
+
 @implementation UltraPickerIOSView
 
 - (void) setComponentsData:(NSArray *)componentsData
@@ -39,10 +42,9 @@
     return self.componentsData.count;
 }
 
-
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [[self.componentsData objectAtIndex:component] count];
+    return [[[self.componentsData objectAtIndex:component] valueForKey:@"items"] count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -52,12 +54,52 @@
 
 - (NSString *)labelForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"label"];
+    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"label"];
+}
+
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    
+    UILabel *displayLabel;
+    
+    if (view) {
+        displayLabel = (UILabel *)view;
+    }else {
+        displayLabel = [UILabel new];
+        displayLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    NSString *fontName;
+    NSInteger fontSize;
+    UIFont *font = nil;
+    
+    //Check for property on the Item first, then the Group
+    NSString *itemFontFamily = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontFamily"];
+    NSString *itemFontSize = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"];
+    
+    if (itemFontFamily != nil || itemFontSize != nil) {
+        fontName = itemFontFamily ?: UIPickerDefaultFontFamily;
+        fontSize = itemFontSize.integerValue > 0 ? itemFontSize.integerValue : UIPickerDefaultFontSize;
+    }else {
+        NSString *groupFontFamily = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
+        NSString *groupFontSize = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
+        fontName = groupFontFamily ?: UIPickerDefaultFontFamily;
+        fontSize = groupFontSize.integerValue > 0 ? groupFontSize.integerValue : UIPickerDefaultFontSize;
+    }
+    
+    font = [UIFont fontWithName:fontName size:fontSize];
+
+    if (font) {
+        displayLabel.font = font;
+    }
+    
+    displayLabel.text = [self labelForRow:row forComponent:component];
+    
+    return displayLabel;
 }
 
 - (NSString *)valueForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[self.componentsData objectAtIndex:component] objectAtIndex:row] valueForKey:@"value"];
+    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"value"];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

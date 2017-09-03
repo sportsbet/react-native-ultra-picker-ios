@@ -7,7 +7,11 @@ A multiple column (component) UIPickerView component
 
 # Why?
 
-Picker from React-Native (at the time of writing) only supports a single column. This native component allows for n columns and an optional Close Bar, with callbacks for `onClose` and `onChanged`
+Picker from React-Native (at the time of writing) only supports a single column. This native component allows for n columns and an optional Close Bar, with callbacks for `onClose` and `onChanged`.
+
+# Version 0.1.4
+
+Added support for custom Font and Size on items in the picker, see updated example.
 
 # Installing
 
@@ -46,8 +50,8 @@ export class reactNativeUltraPickerIosExample extends React.Component {
       <View style={styles.container}>
         <UltraPickerIOS onChange={this.pickerChanged} style={styles.ultraPicker}>
           <UltraPickerIOSCloseBar style={styles.closeBar} onClose={this.pickerClosed} />
-          <Group>
-            <Item label="Dune" value={{someKey: "some value"}}/>
+          <Group fontFamily="Copperplate-Bold" fontSize="14.0">
+            <Item label="Dune" value={{someKey: "some value"}} fontFamily="Futura-CondensedExtraBold" fontSize="10.0"/>
             <Item label="Dune Messiah" />
             <Item label="Children of Dune" />
             <Item label="God Emperor of Dune" />
