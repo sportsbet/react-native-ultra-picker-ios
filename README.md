@@ -25,64 +25,16 @@ Under Link Binary With Libraries click the + button and add `libUltraPickerIOS.a
 
 ![XCode setup](http://i.imgur.com/ko69aL3.png)
 
-# Example
+# Running the Example
 
-```js
-// index.ios.js
-import { UltraPickerIOS, 
-  UltraPickerIOSCloseBar, 
-  Group,
-  Item
- } from "react-native-ultra-picker-ios"
- 
-export class reactNativeUltraPickerIosExample extends React.Component {
-   
-   pickerClosed() {
-    console.log("Closed");
-  }
+Note: You *must* use `yarn`. If you use `npm`, it will do some symlinking thing
+which causes the React Packager to get very upset.
 
-  pickerChanged(result) {
-    console.log(JSON.stringify(result.nativeEvent));
-  }
+* `cd example`
+* `yarn && react-native link`
+* `yarn start`
 
-  render() {
-    return (  
-      <View style={styles.container}>
-        <UltraPickerIOS onChange={this.pickerChanged} style={styles.ultraPicker}>
-          <UltraPickerIOSCloseBar style={styles.closeBar} onClose={this.pickerClosed} />
-          <Group fontFamily="Copperplate-Bold" fontSize="14.0">
-            <Item label="Dune" value={{someKey: "some value"}} fontFamily="Futura-CondensedExtraBold" fontSize="10.0"/>
-            <Item label="Dune Messiah" />
-            <Item label="Children of Dune" />
-            <Item label="God Emperor of Dune" />
-            <Item label="Heretics of Dune" selected={true} />
-            <Item label="Chapterhouse: Dune"/>
-          </Group>
-          <Group>
-            <Item label="Paperback" />
-            <Item label="Kobo" />
-            <Item label="Kindle" selected={true} />
-            <Item label="Nook" />
-          </Group>
-        </UltraPickerIOS>
-      </View>
-    );
-  }
-}
-
-let styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center"
-  },
-  closeBar: {
-    height: 44
-  },
-  ultraPicker: {
-    height: 220
-  }
-});
-```
+Then run a simulator either using Xcode or `react-native run-ios`.
 
 ![Example](http://i.imgur.com/QJCljAq.png)
 
