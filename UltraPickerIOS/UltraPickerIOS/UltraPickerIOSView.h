@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <React/RCTComponent.h>
 
-@interface UltraPickerIOSView : UIPickerView
+@interface UltraPickerIOSView : UIPickerView <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, copy) NSArray <NSArray <NSDictionary<NSString *, id> *> *> *componentsData;
 @property (nonatomic, copy) NSArray <NSNumber*> *selectedIndexes;

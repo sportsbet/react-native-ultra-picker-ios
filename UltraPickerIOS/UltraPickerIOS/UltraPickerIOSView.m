@@ -39,12 +39,14 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return self.componentsData.count;
+    // Never return zero, or the selection indicator lines won't render
+    return MAX(self.componentsData.count, 1);
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    return [[[self.componentsData objectAtIndex:component] valueForKey:@"items"] count];
+    // Never return zero, or the selection indicator lines won't render
+    return MAX([[[self.componentsData objectAtIndex:component] valueForKey:@"items"] count], 1);
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
@@ -54,7 +56,12 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
 
 - (NSString *)labelForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"label"];
+    NSString *text = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"label"];
+    if (!text) {
+        return @"";
+    } else {
+        return text;
+    }
 }
 
 -(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
@@ -99,7 +106,12 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
 
 - (NSString *)valueForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"value"];
+    NSString *text = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"value"];
+    if (!text) {
+        return @"";
+    } else {
+        return text;
+    }
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component

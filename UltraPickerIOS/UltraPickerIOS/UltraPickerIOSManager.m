@@ -22,6 +22,9 @@ RCT_EXPORT_MODULE()
 {
     UltraPickerIOSView *view = [UltraPickerIOSView new];
     view.delegate = view;
+    view.dataSource = view;
+    // Work around an iOS bug that hides the selection indicator lines
+    [view selectRow:0 inComponent:0 animated:YES];
     return view;
 }
 
