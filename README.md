@@ -9,6 +9,14 @@ A multiple column (component) UIPickerView component
 
 Picker from React-Native (at the time of writing) only supports a single column. This native component allows for n columns and an optional Close Bar, with callbacks for `onClose` and `onChanged`.
 
+# Version 0.1.5
+
+- Minimum React-Native version: 0.48.1
+- Minimum React version: 16.0
+- Use 0.1.4 if this is an issue for your project
+- Fixed the lines indicating the selected row not rendering
+- Added support for `testID` property on the picker view and the close bar
+
 # Version 0.1.4
 
 Added support for custom Font and Size on items in the picker, see updated example.

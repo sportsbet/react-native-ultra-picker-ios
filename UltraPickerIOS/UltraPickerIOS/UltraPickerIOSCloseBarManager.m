@@ -26,5 +26,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_VIEW_PROPERTY(closeButtonText, NSString)
 RCT_EXPORT_VIEW_PROPERTY(onClose, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(testID, NSString)
+
 
 @end

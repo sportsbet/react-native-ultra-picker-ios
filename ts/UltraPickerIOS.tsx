@@ -8,7 +8,8 @@
 import * as React from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  ViewStyle
 } from 'react-native';
 
 import { requireNativeComponent } from 'react-native';
@@ -21,13 +22,15 @@ interface UltraPickerIOSNative {
     componentsData?: any,
     selectedIndexes?: Number[]
     onChange?: (result: any) => void
-    style?: StyleSheet.Style
+    style?: ViewStyle
+    testID?: string
 }
 
 interface UltraPickerIOSCloseBarNative {
     closeButtonText?: string
     onClose?: (result: any) => void
-    style?: StyleSheet.Style
+    style?: ViewStyle
+    buttonTestID?: string
 }
 
 export interface ComponentGroup {
@@ -47,13 +50,13 @@ interface NativeGroup extends ComponentGroup {
     items?: ComponentItemProps[],
 } 
 
-export class Group extends React.Component<ComponentGroup, any> {
+export class Group extends React.Component<ComponentGroup> {
     render() {
         return null
     }
 }
 
-export class Item extends React.Component<ComponentItemProps, any> {
+export class Item extends React.Component<ComponentItemProps> {
     render() {
         return null
     }
@@ -61,7 +64,8 @@ export class Item extends React.Component<ComponentItemProps, any> {
 
 export interface UltraPickerIOSProps {
     onChange?: (result: any) => void
-    style: any
+    style: ViewStyle
+    testID?: string
 }
 
 export interface UltraPickerIOSState {
@@ -170,6 +174,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
                     onChange={this.props.onChange}
                     componentsData={this.state.componentsData}
                     selectedIndexes={this.state.selectedIndexes}
+                    testID={this.props.testID}
                 />
             </View>
         )
@@ -179,10 +184,11 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
 export interface UltraPickerIOSCloseBarProps {
     closeButtonText?: string
     onClose?: (result: any) => void
-    style?: StyleSheet.Style
+    style?: ViewStyle,
+    buttonTestID?: string
 }
 
-export class UltraPickerIOSCloseBar extends React.Component<UltraPickerIOSCloseBarProps, any> {
+export class UltraPickerIOSCloseBar extends React.Component<UltraPickerIOSCloseBarProps> {
 
     render() {
         let style = {
@@ -195,6 +201,7 @@ export class UltraPickerIOSCloseBar extends React.Component<UltraPickerIOSCloseB
                 style={style || this.props.style}
                 closeButtonText={closeButtonText}
                 onClose={this.props.onClose}
+                buttonTestID={this.props.buttonTestID}
             />
         )
     }

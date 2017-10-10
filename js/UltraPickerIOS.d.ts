@@ -1,6 +1,6 @@
 /// <reference types="react" />
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { ViewStyle } from 'react-native';
 export interface ComponentGroup {
     fontFamily?: string;
     fontSize?: string;
@@ -12,15 +12,16 @@ export interface ComponentItemProps {
     fontFamily?: string;
     fontSize?: string;
 }
-export declare class Group extends React.Component<ComponentGroup, any> {
+export declare class Group extends React.Component<ComponentGroup> {
     render(): any;
 }
-export declare class Item extends React.Component<ComponentItemProps, any> {
+export declare class Item extends React.Component<ComponentItemProps> {
     render(): any;
 }
 export interface UltraPickerIOSProps {
     onChange?: (result: any) => void;
-    style: any;
+    style: ViewStyle;
+    testID?: string;
 }
 export interface UltraPickerIOSState {
     componentsData?: ComponentGroup[];
@@ -36,8 +37,9 @@ export declare class UltraPickerIOS extends React.Component<UltraPickerIOSProps,
 export interface UltraPickerIOSCloseBarProps {
     closeButtonText?: string;
     onClose?: (result: any) => void;
-    style?: StyleSheet.Style;
+    style?: ViewStyle;
+    buttonTestID?: string;
 }
-export declare class UltraPickerIOSCloseBar extends React.Component<UltraPickerIOSCloseBarProps, any> {
+export declare class UltraPickerIOSCloseBar extends React.Component<UltraPickerIOSCloseBarProps> {
     render(): JSX.Element;
 }

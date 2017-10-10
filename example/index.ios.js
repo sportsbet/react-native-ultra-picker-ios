@@ -30,20 +30,20 @@ export class reactNativeUltraPickerIosExample extends React.Component {
   render() {
     return (  
       <View style={styles.container}>
-        <UltraPickerIOS onChange={this.pickerChanged} style={styles.ultraPicker}>
-          <UltraPickerIOSCloseBar style={styles.closeBar} onClose={this.pickerClosed} />
+        <UltraPickerIOS testID={"UltraPickerView"} onChange={this.pickerChanged} style={styles.ultraPicker}>
+          <UltraPickerIOSCloseBar buttonTestID={"UltraPickerCloseBarButton"} style={styles.closeBar} onClose={this.pickerClosed} />
           <Group fontFamily="Copperplate-Bold" fontSize="14.0">
-            <Item label="Dune" value={{someKey: "some value"}} fontFamily="Futura-CondensedExtraBold" fontSize="10.0"/>
+            <Item label="Dune" value={{someKey: "some value"}} fontFamily="Futura-CondensedExtraBold" fontSize="10.0" />
             <Item label="Dune Messiah" />
-            <Item label="Children of Dune" />
+            <Item label="Children of Dune" selected={true} />
             <Item label="God Emperor of Dune" />
-            <Item label="Heretics of Dune" selected={true} />
-            <Item label="Chapterhouse: Dune"/>
+            <Item label="Heretics of Dune" />
+            <Item label="Chapterhouse: Dune" />
           </Group>
           <Group>
-            <Item label="Paperback" />
-            <Item label="Kobo" />
-            <Item label="Kindle" selected={true} />
+            <Item label="Paperback"/>
+            <Item label="Kobo" selected={true} />
+            <Item label="Kindle" />
             <Item label="Nook" />
           </Group>
         </UltraPickerIOS>

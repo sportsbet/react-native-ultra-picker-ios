@@ -5,10 +5,11 @@
         "experimentalDecorators": true,
         "preserveConstEnums": true,
         "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": false,
-        "rootDir": "ts",
         "outDir": "js",
+        "rootDir": "ts",
         "moduleResolution": "node",
         "declaration": true
     }

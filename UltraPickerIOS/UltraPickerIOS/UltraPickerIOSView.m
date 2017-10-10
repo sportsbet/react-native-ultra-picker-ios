@@ -37,6 +37,12 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
     }
 }
 
+- (void) setTestID:(NSString *)testID
+{
+    _testID = testID;
+    self.accessibilityIdentifier = testID;
+}
+
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     // Never return zero, or the selection indicator lines won't render

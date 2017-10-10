@@ -29,6 +29,12 @@
     self.clipsToBounds = YES; // removes the border. Again, use the view style in React to change this
 }
 
+- (void) setTestID:(NSString *)testID
+{
+    _testID = testID;
+    self.accessibilityIdentifier = testID;
+}
+
 - (void)doneTapped
 {
     if (self.onClose) {

@@ -32,5 +32,6 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_VIEW_PROPERTY(componentsData, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(selectedIndexes, NSArray)
 RCT_EXPORT_VIEW_PROPERTY(onChange, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(testID, NSString)
 
 @end

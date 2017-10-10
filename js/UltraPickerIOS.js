@@ -31,7 +31,7 @@ var UltraPickerIOSNative = react_native_2.requireNativeComponent("UltraPickerIOS
 var UltraPickerIOSCloseBarNative = react_native_2.requireNativeComponent("UltraPickerIOSCloseBar", null);
 var DEFAULT_CLOSEBAR_HEIGHT = 44;
 var DEFAULT_PICKER_HEIGHT = 216;
-var Group = (function (_super) {
+var Group = /** @class */ (function (_super) {
     __extends(Group, _super);
     function Group() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -42,7 +42,7 @@ var Group = (function (_super) {
     return Group;
 }(React.Component));
 exports.Group = Group;
-var Item = (function (_super) {
+var Item = /** @class */ (function (_super) {
     __extends(Item, _super);
     function Item() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -53,7 +53,7 @@ var Item = (function (_super) {
     return Item;
 }(React.Component));
 exports.Item = Item;
-var UltraPickerIOS = (function (_super) {
+var UltraPickerIOS = /** @class */ (function (_super) {
     __extends(UltraPickerIOS, _super);
     function UltraPickerIOS(props) {
         var _this = _super.call(this, props) || this;
@@ -143,12 +143,12 @@ var UltraPickerIOS = (function (_super) {
         }
         return (React.createElement(react_native_1.View, { style: parentViewStyle },
             this.state.closeBar,
-            React.createElement(UltraPickerIOSNative, { style: pickerViewStyle, onChange: this.props.onChange, componentsData: this.state.componentsData, selectedIndexes: this.state.selectedIndexes })));
+            React.createElement(UltraPickerIOSNative, { style: pickerViewStyle, onChange: this.props.onChange, componentsData: this.state.componentsData, selectedIndexes: this.state.selectedIndexes, testID: this.props.testID })));
     };
     return UltraPickerIOS;
 }(React.Component));
 exports.UltraPickerIOS = UltraPickerIOS;
-var UltraPickerIOSCloseBar = (function (_super) {
+var UltraPickerIOSCloseBar = /** @class */ (function (_super) {
     __extends(UltraPickerIOSCloseBar, _super);
     function UltraPickerIOSCloseBar() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -156,7 +156,7 @@ var UltraPickerIOSCloseBar = (function (_super) {
     UltraPickerIOSCloseBar.prototype.render = function () {
         var style = __assign({ height: DEFAULT_CLOSEBAR_HEIGHT }, react_native_1.StyleSheet.flatten(this.props.style));
         var closeButtonText = this.props.closeButtonText || "Close";
-        return (React.createElement(UltraPickerIOSCloseBarNative, { style: style || this.props.style, closeButtonText: closeButtonText, onClose: this.props.onClose }));
+        return (React.createElement(UltraPickerIOSCloseBarNative, { style: style || this.props.style, closeButtonText: closeButtonText, onClose: this.props.onClose, buttonTestID: this.props.buttonTestID }));
     };
     return UltraPickerIOSCloseBar;
 }(React.Component));

@@ -13,5 +13,6 @@
 
 @property (nonatomic, copy) NSString *closeButtonText;
 @property (nonatomic, copy) RCTBubblingEventBlock onClose;
+@property (nonatomic, copy) NSString *testID;
 
 @end
