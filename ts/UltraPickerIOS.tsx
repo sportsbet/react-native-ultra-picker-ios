@@ -103,9 +103,9 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
             if (!child) {
                 return
             }
-            if (child.type.name === "UltraPickerIOSCloseBar") {
+            if (child.type === UltraPickerIOSCloseBar) {
                 nextState.closeBar = child
-            } else if (child.type.name === "Group") {
+            } else if (child.type === Group) {
                 let group: ComponentItemProps[] = []
                 let groupSelectedItem = 0 // item at index 0 by default
                 let items = null
@@ -116,7 +116,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
                         items = [child.props.children]
                     }
                     items.forEach((item, index) => {
-                        if (item.type.name === "Item" && item.props.label) {
+                        if (item.type === Item && item.props.label) {
                             const nativeItem: ComponentItemProps = {
                                 label: item.props.label,
                                 fontFamily: item.props.fontFamily,
