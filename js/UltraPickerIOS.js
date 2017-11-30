@@ -83,10 +83,10 @@ var UltraPickerIOS = /** @class */ (function (_super) {
             if (!child) {
                 return;
             }
-            if (child.type.name === "UltraPickerIOSCloseBar") {
+            if (child.type === UltraPickerIOSCloseBar) {
                 nextState.closeBar = child;
             }
-            else if (child.type.name === "Group") {
+            else if (child.type === Group) {
                 var group_1 = [];
                 var groupSelectedItem_1 = 0; // item at index 0 by default
                 var items = null;
@@ -98,7 +98,7 @@ var UltraPickerIOS = /** @class */ (function (_super) {
                         items = [child.props.children];
                     }
                     items.forEach(function (item, index) {
-                        if (item.type.name === "Item" && item.props.label) {
+                        if (item.type === Item && item.props.label) {
                             var nativeItem = {
                                 label: item.props.label,
                                 fontFamily: item.props.fontFamily,
