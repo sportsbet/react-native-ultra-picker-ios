@@ -33,7 +33,9 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
     }
     for (NSInteger i = 0; i < selectedIndexes.count; i++) {
         NSInteger index = [selectedIndexes[i] integerValue];
-        [self selectRow:index inComponent:i animated:NO];
+        if (index) {
+            [self selectRow:index inComponent:i animated:NO];
+        }
     }
 }
 

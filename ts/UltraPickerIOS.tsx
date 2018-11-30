@@ -9,7 +9,9 @@ import * as React from 'react';
 import {
   StyleSheet,
   View,
-  ViewStyle
+  ViewStyle,
+  NativeSyntheticEvent,
+  StyleProp
 } from 'react-native';
 
 import { requireNativeComponent } from 'react-native';
@@ -22,14 +24,14 @@ interface UltraPickerIOSNative {
     componentsData?: any,
     selectedIndexes?: Number[]
     onChange?: (result: any) => void
-    style?: ViewStyle
+    style?: StyleProp<ViewStyle>
     testID?: string
 }
 
 interface UltraPickerIOSCloseBarNative {
     closeButtonText?: string
     onClose?: (result: any) => void
-    style?: ViewStyle
+    style?: StyleProp<ViewStyle>
     buttonTestID?: string
 }
 
@@ -62,9 +64,16 @@ export class Item extends React.Component<ComponentItemProps> {
     }
 }
 
+export interface UltraPickerChangeEvent {
+    newIndex: number
+    component: number
+    newValue: string
+    newLabel: string
+}
+
 export interface UltraPickerIOSProps {
-    onChange?: (result: any) => void
-    style: ViewStyle
+    onChange?: (result: NativeSyntheticEvent<UltraPickerChangeEvent>) => void
+    style: StyleProp<ViewStyle>
     testID?: string
 }
 
@@ -184,7 +193,7 @@ export class UltraPickerIOS extends React.Component<UltraPickerIOSProps, UltraPi
 export interface UltraPickerIOSCloseBarProps {
     closeButtonText?: string
     onClose?: (result: any) => void
-    style?: ViewStyle,
+    style?: StyleProp<ViewStyle>,
     buttonTestID?: string
 }
 
