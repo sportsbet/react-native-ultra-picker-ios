@@ -6,24 +6,30 @@
 //  Copyright © 2017 Sportsbet. All rights reserved.
 //
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 var react_native_1 = require("react-native");
 var react_native_2 = require("react-native");
@@ -141,9 +147,10 @@ var UltraPickerIOS = /** @class */ (function (_super) {
         if (this.state.closeBar) {
             parentViewStyle.height = parentViewStyle.height + DEFAULT_CLOSEBAR_HEIGHT;
         }
-        return (React.createElement(react_native_1.View, { style: parentViewStyle },
-            this.state.closeBar,
-            React.createElement(UltraPickerIOSNative, { style: pickerViewStyle, onChange: this.props.onChange, componentsData: this.state.componentsData, selectedIndexes: this.state.selectedIndexes, testID: this.props.testID })));
+        return (<react_native_1.View style={parentViewStyle}>
+                {this.state.closeBar}
+                <UltraPickerIOSNative style={pickerViewStyle} onChange={this.props.onChange} componentsData={this.state.componentsData} selectedIndexes={this.state.selectedIndexes} testID={this.props.testID}/>
+            </react_native_1.View>);
     };
     return UltraPickerIOS;
 }(React.Component));
@@ -156,7 +163,7 @@ var UltraPickerIOSCloseBar = /** @class */ (function (_super) {
     UltraPickerIOSCloseBar.prototype.render = function () {
         var style = __assign({ height: DEFAULT_CLOSEBAR_HEIGHT }, react_native_1.StyleSheet.flatten(this.props.style));
         var closeButtonText = this.props.closeButtonText || "Close";
-        return (React.createElement(UltraPickerIOSCloseBarNative, { style: style || this.props.style, closeButtonText: closeButtonText, onClose: this.props.onClose, buttonTestID: this.props.buttonTestID }));
+        return (<UltraPickerIOSCloseBarNative style={style || this.props.style} closeButtonText={closeButtonText} onClose={this.props.onClose} buttonTestID={this.props.buttonTestID}/>);
     };
     return UltraPickerIOSCloseBar;
 }(React.Component));
