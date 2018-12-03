@@ -34,16 +34,17 @@ export class reactNativeUltraPickerIosExample extends React.Component {
           <UltraPickerIOSCloseBar buttonTestID={"UltraPickerCloseBarButton"} style={styles.closeBar} onClose={this.pickerClosed} />
           <Group fontFamily="Copperplate-Bold" fontSize="14.0">
             <Item label="Dune" value={{someKey: "some value"}} fontFamily="Futura-CondensedExtraBold" fontSize="10.0" />
+            <Item label="Dune Messiah"/>
             <Item label="Dune Messiah" />
-            <Item label="Children of Dune" selected={true} />
+            <Item label="Children of Dune" />
             <Item label="God Emperor of Dune" />
             <Item label="Heretics of Dune" />
             <Item label="Chapterhouse: Dune" />
           </Group>
           <Group>
             <Item label="Paperback"/>
-            <Item label="Kobo" selected={true} />
-            <Item label="Kindle" />
+            <Item label="Kobo" />
+            <Item label="Kindle"/>
             <Item label="Nook" />
           </Group>
         </UltraPickerIOS>

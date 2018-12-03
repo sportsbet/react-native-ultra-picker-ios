@@ -9,6 +9,11 @@ A multiple column (component) UIPickerView component
 
 Picker from React-Native (at the time of writing) only supports a single column. This native component allows for n columns and an optional Close Bar, with callbacks for `onClose` and `onChanged`.
 
+# Version 0.1.8
+
+- Fixes a bug that was triggered after presenting a picker when another picker has been already presented and the second one has less sections than the first.
+- Updated example app to support RN 57
+
 # Version 0.1.5
 
 - Minimum React-Native version: 0.48.1
@@ -24,14 +29,13 @@ Added support for custom Font and Size on items in the picker, see updated examp
 # Installing
 
 ``` 
-npm install "react-native-ultra-picker-ios"
+yarn install "react-native-ultra-picker-ios"
+react-native link react-native-ultra-picker-ios
 ```
 - Open your existing app's .xcodeproj file
 - Drag the /.node_modules/react-native-ultra-picker-ios/UltraPickerIOS/UltraPickerIOS.xcodeproj file into the Libraries group in your xcode project (Figure A)
 - Choose your app's Target and select the Build Phases tab.
 Under Link Binary With Libraries click the + button and add `libUltraPickerIOS.a` (Figure B)
-
-![XCode setup](http://i.imgur.com/ko69aL3.png)
 
 # Running the Example
 
@@ -39,7 +43,7 @@ Note: You *must* use `yarn`. If you use `npm`, it will do some symlinking thing
 which causes the React Packager to get very upset.
 
 * `cd example`
-* `yarn && react-native link`
+* `yarn && react-native link react-native-ultra-picker-ios`
 * `yarn start`
 
 Then run a simulator either using Xcode or `react-native run-ios`.
