@@ -22,6 +22,15 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
     if (componentsData != _componentsData) {
         _componentsData = [componentsData copy];
         [self setNeedsLayout];
+        
+        if (self.selectedIndexes) {
+            for (NSInteger i = 0; i < self.selectedIndexes.count; i++) {
+                if (i < self.componentsData.count) {
+                    NSInteger index = [self.selectedIndexes[i] integerValue];
+                    [self selectRow:index inComponent:i animated:NO];
+                }
+            }
+        }
     }
 }
 
@@ -33,9 +42,7 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
     }
     for (NSInteger i = 0; i < selectedIndexes.count; i++) {
         NSInteger index = [selectedIndexes[i] integerValue];
-        if (index) {
-            [self selectRow:index inComponent:i animated:NO];
-        }
+        [self selectRow:index inComponent:i animated:NO];
     }
 }
 
