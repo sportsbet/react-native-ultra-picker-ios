@@ -43,7 +43,7 @@ export class reactNativeUltraPickerIosExample extends React.Component {
           <Group>
             <Item label="Paperback"/>
             <Item label="Kobo" selected={true} />
-            <Item label="Kindle" />
+            <Item label="Kindle"/>
             <Item label="Nook" />
           </Group>
         </UltraPickerIOS>

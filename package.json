@@ -1,6 +1,6 @@
 {
   "name": "react-native-ultra-picker-ios",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A multiple component Picker for react-native iOS. More than one column, imagine that!",
   "main": "js/UltraPickerIOS.js",
   "typings": "js/UltraPickerIOS.d.ts",
