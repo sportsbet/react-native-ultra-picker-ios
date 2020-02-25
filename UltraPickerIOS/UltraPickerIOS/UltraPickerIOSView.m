@@ -99,13 +99,13 @@ NSInteger const UPPickerDefaultFontSize = 17.0;
     
     if (itemFontFamily != nil || itemFontSize != nil) {
         fontName = itemFontFamily;
-        fontSize = itemFontSize.integerValue;
+        fontSize = itemFontSize.floatValue;
     } else {
         NSString *groupFontFamily = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
         NSString *groupFontSize = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
         
         fontName = groupFontFamily;
-        fontSize = groupFontSize.integerValue;
+        fontSize = groupFontSize.floatValue;
     }
     
     if (fontName != nil) {
