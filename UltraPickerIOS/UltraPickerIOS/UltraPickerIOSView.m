@@ -12,8 +12,7 @@
 
 @end
 
-NSInteger const UIPickerDefaultFontSize = 17.0;
-NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
+NSInteger const UPPickerDefaultFontSize = 17.0;
 
 @implementation UltraPickerIOSView
 
@@ -99,16 +98,21 @@ NSString const *UIPickerDefaultFontFamily = @"HelveticaNeue";
     NSString *itemFontSize = [[[[self.componentsData objectAtIndex:component] valueForKey:@"items"] objectAtIndex:row] valueForKey:@"fontSize"];
     
     if (itemFontFamily != nil || itemFontSize != nil) {
-        fontName = itemFontFamily ?: UIPickerDefaultFontFamily;
-        fontSize = itemFontSize.integerValue > 0 ? itemFontSize.integerValue : UIPickerDefaultFontSize;
-    }else {
+        fontName = itemFontFamily;
+        fontSize = itemFontSize.floatValue;
+    } else {
         NSString *groupFontFamily = [[self.componentsData objectAtIndex:component] valueForKey:@"fontFamily"];
         NSString *groupFontSize = [[self.componentsData objectAtIndex:component] valueForKey:@"fontSize"];
-        fontName = groupFontFamily ?: UIPickerDefaultFontFamily;
-        fontSize = groupFontSize.integerValue > 0 ? groupFontSize.integerValue : UIPickerDefaultFontSize;
+        
+        fontName = groupFontFamily;
+        fontSize = groupFontSize.floatValue;
     }
     
-    font = [UIFont fontWithName:fontName size:fontSize];
+    if (fontName != nil) {
+        font = [UIFont fontWithName:fontName size:fontSize];
+    } else {
+        font = [UIFont systemFontOfSize:fontSize];
+    }
 
     if (font) {
         displayLabel.font = font;
