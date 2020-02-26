@@ -29,7 +29,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn build
-      - run: npm version --force "$RELEASE_TAG_NAME"
+      - run: npm version --force --no-git-tag-version "$RELEASE_TAG_NAME"
         env:
           RELEASE_TAG_NAME: ${{github.event.release.tag_name}}
       - run: npm publish
